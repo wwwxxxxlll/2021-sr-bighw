@@ -14,6 +14,7 @@
     <link href="/src/css/prettyPhoto.css" rel="stylesheet">
     <link href="/src/css/main.css" rel="stylesheet">
     <link href="/src/css/responsive.css" rel="stylesheet">
+    <script src="/src/js/echarts.min.js"></script>
     <!--[if lt IE 9]>
     <script src="/src/js/html5shiv.js"></script>
     <script src="/src/js/respond.min.js"></script>
@@ -69,16 +70,16 @@
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/src/index.html">Home</a></li>
-                        <li><a href="/src/about-us.html">About Us</a></li>
-                        <li><a href="/src/services.html">Services</a></li>
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="{% url 'about-us' %}">About Us</a></li>
+                        <li><a href="{% url '贡献' %}">Contribution</a></li>
                         <li><a href="/src/portfolio.html">Portfolio</a></li>
                         <li class="dropdown">
                             <a href="/src/#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/src/blog-item.html">Blog Single</a></li>
                                 <li><a href="/src/pricing.html">Pricing</a></li>
-                                <li><a href="/src/404.html">404</a></li>
+                                <li><a href="{% url '404' %}">404</a></li>
                                 <li><a href="/src/shortcodes.html">Shortcodes</a></li>
                             </ul>
                         </li>
