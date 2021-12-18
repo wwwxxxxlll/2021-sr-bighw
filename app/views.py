@@ -37,6 +37,7 @@ def home(request):
     api_request = requests.get('https://api.github.com/users?since=0', headers=headers)
 
     api = json.loads(api_request.content)
+    
     print(api)
     # 返回函数render中的参数包含request,''-要跳转的页面,{key:value}-传递到页面的数据
     return render(request, 'home.html', {'api': api})
