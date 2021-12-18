@@ -26,11 +26,10 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('app.urls')),
-    path('',views.index),
     path('commit',views.commit),
     path('home',views.home),
     path('user',views.user),
+    path('',include('app.urls')),
     url(r'^static/(?P<path>.*)$', static.serve,    
     {'document_root': settings.STATIC_ROOT}, name='static'),
 ]
