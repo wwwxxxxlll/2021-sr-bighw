@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <br>
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4">Django案例之GitHub用户接口展示</h1>
+              <p class="lead">教程参考 <a href="https://www.bilibili.com/video/BV1KJ41117HL" >https://www.bilibili.com/video/BV1KJ41117HL</a></p>
+          </div>
+        </div>
+    
+        <div class="container">
+            <div class="row">
+                {% for x in api %}
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{x.avatar_url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ x.login }}</h5>
+                            <p class="card-text">{{ x.login }}的GitHub</p>
+                            <a href="{{ x.html_url }}" class="btn btn-primary">访问</a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                {% endfor %}
+            
+            </div>
+        </div>
+    {% endblock %}

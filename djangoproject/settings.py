@@ -16,6 +16,14 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
+STATICFILES_DIRS = (
+    ('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ),
+    ('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ),
+    ('images',os.path.join(STATIC_ROOT,'images').replace('\\','/') ),
+    ('upload',os.path.join(STATIC_ROOT,'upload').replace('\\','/') ),
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -81,11 +89,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         #这一块需要连接自己本地的数据库
-        'NAME': 'test',
+        'NAME': 'sr',
         'HOST': '127.0.0.1',
         'PORT': 3306,
         'USER': 'root',
-        'PASSWORD': '917zjk',
+        'PASSWORD': '139036',
     }
 }
 
@@ -126,10 +134,6 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/src/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'static')
-]
 
 
 # Default primary key field type
