@@ -102,7 +102,7 @@ def commit(request):
                     avatar_url_1 = user_info['avatar_url']
                     commit_users.append({"user":sorted_dict[i][0],"url":commit_url,"a_url":avatar_url_1})
             
-            return render(request,'brief_info.html',{"id":id,"url":url,"owner":owner,"avatar_url":avatar_url,"html_url":html_url,"description":description,"topics":topics,"stargazers_count":stargazers_count,"created_at":created_at,"commit_users":commit_users,"date_newest":date_newest})
+            return render(request,'brief_info.html',{"repo_url":url,"id":id,"url":url,"owner":owner,"avatar_url":avatar_url,"html_url":html_url,"description":description,"topics":topics,"stargazers_count":stargazers_count,"created_at":created_at,"commit_users":commit_users,"date_newest":date_newest})
 
 def user(request):
     # 获取搜索框中输入的内容，前端搜索框文本的名称为input_content
