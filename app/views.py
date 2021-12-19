@@ -6,6 +6,10 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 import requests
 from datetime import datetime
+<<<<<<< Updated upstream
+=======
+from .models import Contributors,Commits,date
+>>>>>>> Stashed changes
 import json
 headers = {"Authorization": "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"}
 
@@ -49,7 +53,10 @@ def commit(request):
         u_list = url.strip().split('/')
         api_url = 'https://api.github.com/repos/'+u_list[3]+'/'+u_list[4]+'/commits'
         content_url = 'https://api.github.com/repos/'+u_list[3]+'/'+u_list[4]
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         api_request = requests.get(content_url, headers=headers)
         contents = json.loads(api_request.content)
         if contents:
@@ -74,6 +81,14 @@ def commit(request):
                 l = l.join(date)
                 dd = datetime.strptime(l, "%Y-%m-%d%H:%M:%S")
                 date_list.append(dd)
+<<<<<<< Updated upstream
+=======
+
+                # 数据插入数据库
+                dbdic = {'o_name': u_list[3], 'r_name': u_list[4], 'c_name': committer['commit']['author']['name']}
+                Commits.objects.create(owner_name = dbdic['o_name'],repo_name=dbdic['r_name'],con_name=dbdic['c_name'])
+
+>>>>>>> Stashed changes
             sorted_date = sorted(date_list,reverse=True)
             date_newest = sorted_date[0]
             #插入数据库date_newest与u_list[3],u_list[4]
@@ -84,6 +99,12 @@ def commit(request):
                     committer_dict[committer['commit']['author']['name']] = committer_dict[committer['commit']['author']['name']] + 1
             sorted_dict = {}
             sorted_dict = sorted(committer_dict.items(), key = lambda kv:(kv[1], kv[0]),reverse = True)
+<<<<<<< Updated upstream
+=======
+
+
+
+>>>>>>> Stashed changes
             #print(sorted_dict)
             commit_users = []
             for i in range(0,3):

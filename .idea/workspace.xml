@@ -7,15 +7,17 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="JupyterTrust" id="9b332cec-c9c4-481e-9401-a966f832871d" />
+  <component name="JupyterTrust" id="e96a1e44-563c-408c-b5f0-fea3b1a10168" />
   <component name="ProjectId" id="22BUDAK6Ry9jm1ENovhlEXJz6Ip" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -54,10 +56,24 @@
       <option name="presentableId" value="Default" />
       <updated>1639310352406</updated>
       <workItem from="1639310355288" duration="36000" />
+      <workItem from="1639882528254" duration="5272000" />
+      <workItem from="1639891707225" duration="198000" />
+      <workItem from="1639892459251" duration="1813000" />
+      <workItem from="1639896405003" duration="7271000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1639886383150">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="70" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1639886383150" />
+    <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1639891149901">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="212" height="477" key="HiddenNamespacesPopup/0.0.1536.824@0.0.1536.824" timestamp="1639891149901" />
   </component>
 </project>
