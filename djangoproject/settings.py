@@ -87,19 +87,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         #这一块需要连接自己本地的数据库
-<<<<<<< Updated upstream
         'NAME': 'sr',
         'HOST': '127.0.0.1',
         'PORT': 3306,
         'USER': 'root',
         'PASSWORD': '139036',
-=======
-        'USER': 'root',
-        'PASSWORD': '917zjk',
-        'NAME': 'test02',
-        'HOST': '',
-        'PORT': 3306,
->>>>>>> Stashed changes
     }
 }
 
