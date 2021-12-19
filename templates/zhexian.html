@@ -67,9 +67,6 @@
                         // 基于准备好的dom，初始化echarts实例
                         var myChart = echarts.init(document.getElementById('main'));
                         var option = {
-                        title: {
-                            text: '第一个 ECharts 实例'
-                        },
                         tooltip: {},
                         legend: {
                             data:['更新百分率']
@@ -99,19 +96,16 @@
                         // 基于准备好的dom，初始化echarts实例
                         var myChart = echarts.init(document.getElementById('main2'));
                         var option = {
-                        title: {
-                            text: '第一个 ECharts 实例'
-                        },
                         tooltip: {},
                         legend: {
-                            data:['更新百分率']
+                            data:['更新次数']
                         },
                         xAxis: {
                             data: ['user1','user2','user3','user4']
                         },
                         yAxis: {},
                         series: [{
-                            name: '更新百分率',
+                            name: '更新次数',
                             type: 'line',
                             data: {{datas4}}
                         }]
@@ -126,7 +120,7 @@
 
 
 			<div class="text-center">
-		        <a href="/commit_from?a=Zhangjk2000/2021-sr-bighw" class="btn btn-primary">
+		        <a href="/commit_from?a={{target}}" class="btn btn-primary">
                     contribution
 		        </a>
 	        </div>

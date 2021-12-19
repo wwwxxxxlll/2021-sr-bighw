@@ -76,4 +76,4 @@ def commit_from(request):
         result3 = []
         result4 = []
 
-    return render(request,'zhexian.html', {"datas1": result1,"datas2":result2,"datas3":result3,"datas4":result4} )
+    return render(request,'zhexian.html', {"tearget":target,"datas1": result1,"datas2":result2,"datas3":result3,"datas4":result4} )
