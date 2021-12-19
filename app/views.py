@@ -31,7 +31,7 @@ class Explain(View):
 
 
 def index(request):
-    return render(request,'zhexian.html',{})
+    return render(request,'brief_info.html',{})
 # 设置主页对应的页面 + 传到主页的数据内容
 def home(request):
     # 使用requests模块得到对应api的json内容，然后使用json.loads获取其内容
@@ -102,7 +102,7 @@ def commit(request):
                     avatar_url_1 = user_info['avatar_url']
                     commit_users.append({"user":sorted_dict[i][0],"url":commit_url,"a_url":avatar_url_1})
             
-            return render(request,'brief_info.html',{"repo_url":url,"id":id,"url":url,"owner":owner,"avatar_url":avatar_url,"html_url":html_url,"description":description,"topics":topics,"stargazers_count":stargazers_count,"created_at":created_at,"commit_users":commit_users,"date_newest":date_newest})
+            return render(request,'brief_info.html',{"id":id,"url":url,"owner":owner,"avatar_url":avatar_url,"html_url":html_url,"description":description,"topics":topics,"stargazers_count":stargazers_count,"created_at":created_at,"commit_users":commit_users,"date_newest":date_newest})
 
 def user(request):
     # 获取搜索框中输入的内容，前端搜索框文本的名称为input_content

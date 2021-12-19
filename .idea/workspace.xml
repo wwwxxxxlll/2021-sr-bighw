@@ -7,7 +7,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="JupyterTrust" id="e96a1e44-563c-408c-b5f0-fea3b1a10168" />
+  <component name="JupyterTrust" id="41b901ca-6f73-4739-97d6-c51aefd87c2a" />
   <component name="ProjectId" id="22BUDAK6Ry9jm1ENovhlEXJz6Ip" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -60,6 +60,7 @@
       <workItem from="1639891707225" duration="198000" />
       <workItem from="1639892459251" duration="1813000" />
       <workItem from="1639896405003" duration="7271000" />
+      <workItem from="1639907461677" duration="3287000" />
     </task>
     <servers />
   </component>

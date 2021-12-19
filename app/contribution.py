@@ -5,8 +5,9 @@ import requests
 def Contribution_from(request):
     contribute_datas = []
     if request.POST:
-        conact = request.POST['q']
-        url_contir = 'https://api.github.com/repos/' + conact +'/contributors'
+        url = request.POST['url1']
+        u_list = url.strip().split('/')
+        url_contir = 'https://api.github.com/repos/' + u_list[3]+'/'+u_list[4] +'/contributors'
         print(url_contir)
         s = requests.session()
         s.keep_alive = False
