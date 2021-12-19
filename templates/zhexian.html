@@ -39,9 +39,9 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
-						<li class = 'list-group-item'><a href="/">Home</a></li>
-                        <li class = 'list-group-item'><a href="{% url 'about-us' %}">About Us</a></li>
-                        <li class = 'list-group-item'><a href="{% url '贡献' %}">Contribution</a></li>
+						<li class = 'list-group-item'><a href="/real_index">Home</a></li>
+                        <li class = 'list-group-item'><a href="/about_us">About Us</a></li>
+                        <li class = 'list-group-item'><a href="/contribution_from">Contribution</a></li>
                         <li class = 'list-group-item'><a href="portfolio.html">Portfolio</a></li>
                         <li class = 'list-group-item'><a href="/home">Blog</a></li>
                         <li class = 'list-group-item'><a href="contact-us.html">Contact</a></li>
@@ -52,13 +52,12 @@
                     username/reponame:<form action="" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="p"value = {{repop_url}}><br/>
-                        分类
                         <select name = "s">
                             <option value="0">按日</option>
                             <option value="1">按月</option>
                             <option value="2">按年</option>
                         </select>
-                        <input type="submit" value="Get" /><br/>
+                        <input type="submit" value="更改坐标轴" /><br/>
                     </form>
                 <br/>
                 </section>

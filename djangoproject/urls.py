@@ -21,16 +21,19 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from app import views
-
+from app import contribution
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('contribution_from',contribution.Contribution_from),
     path('index',views.index),
     path('commit',views.commit),
     path('home',views.home),
     path('user',views.user),
-    path('',include('app.urls')),
-    url(r'^static/(?P<path>.*)$', static.serve,    
-    {'document_root': settings.STATIC_ROOT}, name='static'),
+    path('real_index',views.real_index),
+    path('about_us',views.about_us),
+    path('notfound',views.notfound),
+    path('intro',views.intro),
+    
 ]

@@ -11,25 +11,20 @@ import json
 headers = {"Authorization": "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"}
 
 # Create your views here.
-
-class Index(View):
-    def get(self,request):
-        return render(request,'index.html')
-
-class aboutus(View):
-    def get(self,request):
-        return render(request,'about-us.html')
-
-class Error(View):
-    def get(self,request):
-        return render(request,'404.html')
-
-class Explain(View):
-    def get(self,request):
-        return render(request,'说明.html')
-
-
-
+def real_index(request):
+    return render(request,'index.html')
+def about_us(request):
+    commit_users = []
+    commit_users.append({"name":"张济开","user":"Zhangjk2000","url":"https://github.com/Zhangjk2000","a_url":"https://avatars.githubusercontent.com/u/85881886?v=4"})
+    commit_users.append({"name":"温相龙","user":"wwwxxxxlll","url":"https://github.com/wwwxxxxlll","a_url":"https://avatars.githubusercontent.com/u/84766861?v=4"})
+    commit_users.append({"name":"罗云","user":"12321231","url":"https://github.com/12321231","a_url":"https://avatars.githubusercontent.com/u/52814667?v=4"})
+    commit_users.append({"name":"曲浩天","user":"quhaotia","url":"https://github.com/quhaotia","a_url": "https://avatars.githubusercontent.com/u/91251905?v=4"})
+    commit_users.append({"name":"董博","user":"shenkongshiyi","url":"https://github.com/shenkongshiyi","a_url":"https://avatars.githubusercontent.com/u/81542105?v=4"})
+    return render(request,'about-us.html',{"us":commit_users})
+def notfound(request):
+    return render(request,'404.html')
+def intro(request):
+    return render(request,'说明.html')
 def index(request):
     return render(request,'brief_info.html',{})
 # 设置主页对应的页面 + 传到主页的数据内容
