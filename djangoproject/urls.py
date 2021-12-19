@@ -22,7 +22,7 @@ from django.contrib import admin
 from django.urls import path
 from app import views
 from app import contribution
-
+from app import commit
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,5 +35,5 @@ urlpatterns = [
     path('about_us',views.about_us),
     path('notfound',views.notfound),
     path('intro',views.intro),
-    
+    path('commit_from',commit.commit_from)
 ]

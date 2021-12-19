@@ -49,13 +49,12 @@
 
 			<main class="content">
 				<section id="username/reponame" class="container text-center">
-                    username/reponame:<form action="" method="post">
+                    <form action="" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="p"value = {{repop_url}}><br/>
                         <select name = "s">
                             <option value="0">按日</option>
                             <option value="1">按月</option>
-                            <option value="2">按年</option>
                         </select>
                         <input type="submit" value="更改坐标轴" /><br/>
                     </form>
@@ -94,6 +93,7 @@
                 <br/>
             
                 <section id="graph2" class="container text-center">
+					userlist: {{datas3}}
                     <div id="main2" style="width: 600px;height:400px;"></div>
                     <script type="text/javascript">
                         // 基于准备好的dom，初始化echarts实例
@@ -107,13 +107,13 @@
                             data:['更新百分率']
                         },
                         xAxis: {
-                            data: {{datas1}}
+                            data: ['user1','user2','user3','user4']
                         },
                         yAxis: {},
                         series: [{
                             name: '更新百分率',
                             type: 'line',
-                            data: {{datas2}}
+                            data: {{datas4}}
                         }]
                     };
             
@@ -123,7 +123,15 @@
                 </section><!--/#折线图-->
 			</main>
 
-			
+
+
+			<div class="text-center">
+		        <a href="/commit_from?a=Zhangjk2000/2021-sr-bighw" class="btn btn-primary">
+                    contribution
+		        </a>
+	        </div>
+
+
 
 			<footer class="footer">
 				<div class="container-fluid">
@@ -154,7 +162,6 @@
 			</footer>
 		</div>
 	</div>
-
 
 
 

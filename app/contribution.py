@@ -4,7 +4,7 @@ import requests
 
 def Contribution_from(request):
     contribute_datas = []
-    if request.GET:
+    if request.POST:
         url = request.POST['url1']
         u_list = url.strip().split('/')
         url_contir = 'https://api.github.com/repos/' + u_list[3]+'/'+u_list[4] +'/contributors'

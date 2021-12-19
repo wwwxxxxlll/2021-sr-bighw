@@ -84,9 +84,9 @@ def commit(request):
                     committer_dict[committer['commit']['author']['name']] = committer_dict[committer['commit']['author']['name']] + 1
             sorted_dict = {}
             sorted_dict = sorted(committer_dict.items(), key = lambda kv:(kv[1], kv[0]),reverse = True)
-
-
             target = u_list[3]+'/'+u_list[4]
+
+
             #print(sorted_dict)
             commit_users = []
             for i in range(0,3):
