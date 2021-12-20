@@ -4,10 +4,9 @@ import requests
 
 def Contribution_from(request):
     contribute_datas = []
-    if request.POST:
-        url = request.POST['url1']
-        u_list = url.strip().split('/')
-        url_contir = 'https://api.github.com/repos/' + u_list[3]+'/'+u_list[4] +'/contributors'
+    if request.GET:
+        url = request.GET['target']
+        url_contir = 'https://api.github.com/repos/' + url +'/contributors'
         print(url_contir)
         s = requests.session()
         s.keep_alive = False
