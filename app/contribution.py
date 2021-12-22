@@ -5,7 +5,7 @@ import requests
 def Contribution_from(request):
     contribute_datas = []
     if request.GET:
-        url = request.GET['target']
+        url = request.GET['a']
         url_contir = 'https://api.github.com/repos/' + url +'/contributors'
         print(url_contir)
         s = requests.session()

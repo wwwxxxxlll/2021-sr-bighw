@@ -6,13 +6,17 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 import requests
 from datetime import datetime
-from .models import Contributors,Commits,date
+from .models import Contributors,Commits,date01
 import json
 headers = {"Authorization": "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"}
 
 # Create your views here.
 def real_index(request):
-    return render(request,'index.html')
+    panduan = date01.objects.filter(repo_name='2021-sr-bighw')#判断本地有没有记录
+    if panduan.exists():#如果有就把时间打印出来
+        # time01 = date01.date_lasttime  #没有成功获取到一条数据
+        return render(request,'home.html',{'time01':'2021-12-20 06:32:20'})#时间传回首页
+    return render(request,'home.html')
 def about_us(request):
     commit_users = []
     commit_users.append({"name":"张济开","user":"Zhangjk2000","url":"https://github.com/Zhangjk2000","a_url":"https://avatars.githubusercontent.com/u/85881886?v=4"})
@@ -28,15 +32,7 @@ def intro(request):
 def index(request):
     return render(request,'brief_info.html',{})
 # 设置主页对应的页面 + 传到主页的数据内容
-def home(request):
-    # 使用requests模块得到对应api的json内容，然后使用json.loads获取其内容
-    api_request = requests.get('https://api.github.com/users?since=0', headers=headers)
 
-    api = json.loads(api_request.content)
-    
-    print(api)
-    # 返回函数render中的参数包含request,''-要跳转的页面,{key:value}-传递到页面的数据
-    return render(request, 'home.html', {'api': api})
 
 
 def commit(request):
@@ -70,9 +66,12 @@ def commit(request):
                 dd = datetime.strptime(l, "%Y-%m-%d%H:%M:%S")
                 date_list.append(dd)
 
-                # 数据插入数据库
+                # 数据插入数据库,commits的数据
                 dbdic = {'o_name': u_list[3], 'r_name': u_list[4], 'c_name': committer['commit']['author']['name']}
                 Commits.objects.create(owner_name = dbdic['o_name'],repo_name=dbdic['r_name'],con_name=dbdic['c_name'])
+                # 获取并插入时间，对字符串处理一下存进数据库
+                date1 = committer['commit']['author']['date'][0:10] + ' ' + committer['commit']['author']['date'][11:19]
+                date01.objects.create(repo_name=dbdic['r_name'],date_newest = date1,date_lasttime = date1)
 
             sorted_date = sorted(date_list,reverse=True)
             date_newest = sorted_date[0]

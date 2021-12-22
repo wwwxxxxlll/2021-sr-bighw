@@ -9,7 +9,7 @@
     display:flex;
     justify-content:center;
     align-items:center;
-    background:#343a40;
+    background:#90e4f1;
  }
  .containr .ring{
      position:relative;
@@ -71,7 +71,7 @@
 }
  .containr .ring:nth-child(3){
      position:absolute;
-     top:-66.66px;
+     top:-30.66px;
      animation: animate2 4s linear infinite;
     animation-delay: -3s;
     border-top:  4px solid transparent;

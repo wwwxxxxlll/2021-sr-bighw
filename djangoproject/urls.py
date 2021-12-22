@@ -25,11 +25,12 @@ from app import contribution
 from app import commit
 
 urlpatterns = [
+    path('',views.real_index),
     path('admin/', admin.site.urls),
     path('contribution_from',contribution.Contribution_from),
     path('index',views.index),
     path('commit',views.commit),
-    path('home',views.home),
+    path('home',views.real_index),
     path('user',views.user),
     path('real_index',views.real_index),
     path('about_us',views.about_us),

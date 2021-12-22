@@ -1,29 +1,87 @@
-{% extends 'base.html' %}
-    {% block content %}
-        <br>
-        <div class="jumbotron jumbotron-fluid">
-          <div class="container">
-            <h1 class="display-4">Django案例之GitHub用户接口展示</h1>
-              <p class="lead">教程参考 <a href="https://www.bilibili.com/video/BV1KJ41117HL" >https://www.bilibili.com/video/BV1KJ41117HL</a></p>
-          </div>
-        </div>
-    
-        <div class="container">
-            <div class="row">
-                {% for x in api %}
-                <div class="col-sm-4">
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{x.avatar_url}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ x.login }}</h5>
-                            <p class="card-text">{{ x.login }}的GitHub</p>
-                            <a href="{{ x.html_url }}" class="btn btn-primary">访问</a>
-                        </div>
-                    </div>
-                    <br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type = "text/css" href = "/src/css/style.css">
+	<link href="src/css/app.css" rel="stylesheet">
+    <title>主页</title>
+</head>
+<body>
+<div>
+
+<nav class="navbar navbar-expand navbar-light navbar-bg">
+	<div class="wrapper">
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle d-flex">
+        </a>
+
+				<div class="form-inline d-none d-sm-inline-block">
+					源码分析-by 代码敲得都队
+				</div>
+
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class = 'list-group-item'><a href="/real_index">Home</a></li>
+                        <li class = 'list-group-item'><a href="/about_us">About Us</a></li>
+                        <li class = 'list-group-item'><a href="/contribution_from">Contribution</a></li>
+                        <li class = 'list-group-item'><a href="portfolio.html">Portfolio</a></li>
+                        <li class = 'list-group-item'><a href="/home">Blog</a></li>
+                        <li class = 'list-group-item'><a href="contact-us.html">Contact</a></li>
+                    </ul>
                 </div>
-                {% endfor %}
-            
+			</nav>
+
+
+            <div align="center">
+                <img src="src/images/logo.jpg" height="360" width="640">
             </div>
-        </div>
-    {% endblock %}
+
+               <div class="row">
+						<div class="col-12">
+							<div class="card">
+                    <form  method="post" action="/commit">
+              {% csrf_token %}
+
+                        <div align="center">
+                            <form class="form-inline my-2 my-lg-0" method="post" action="/user">
+                            {% csrf_token %}
+                            <input class="form-control mr-sm-2" name="url" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+                            </form>
+                        </div>
+
+                        </form></div>
+                            <div align="center">
+                                选择分析网站：<select>
+                                <option class="bg-info-light">github</option>
+                                <option>gitee</option>
+                                </select>
+
+                            </div>
+                            <div align="center">
+                                项目上次更新时间：<p>{{ time01 }}</p>
+                            </div>
+
+                <br><br><br>
+                    <div class = "containr">
+                    <div class = "ring"></div>
+                    <div class = "ring"></div>
+                    <div class = "ring"></div>
+                    </div>
+
+
+                            <br><br><br><br><br><br>
+                            </div>
+                   </div>
+		</div>
+	</div>
+
+
+
+</body>
+</html>
